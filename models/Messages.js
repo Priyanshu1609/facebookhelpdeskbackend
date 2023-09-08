@@ -9,6 +9,10 @@ const MessageSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    updated_time: {
+        type: Date,
+        required: true
+    }
 }, { timestamps: true });
 
 module.exports = mongoose.model("Message", MessageSchema);
