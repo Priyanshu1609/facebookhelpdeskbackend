@@ -33,14 +33,14 @@ router.post("/messages/add", async (req, res) => {
         });
 
         await existingMessage.save();
-        res.status(200).json({ message: "Message saved successfully", message: existingMessage });
+        res.status(200).json({ message: "Message saved successfully", data: existingMessage });
       } else {
         // Update the existing message
         existingMessage.message = message;
         existingMessage.updated_time = currentTime;
 
         await existingMessage.save();
-        res.status(200).json({ message: "Message updated successfully", message: existingMessage });
+        res.status(200).json({ message: "Message updated successfully", data: existingMessage });
       }
     } else {
       // Create a new message if it doesn't exist
@@ -51,7 +51,7 @@ router.post("/messages/add", async (req, res) => {
       });
 
       await existingMessage.save();
-      res.status(200).json({ message: "Message created successfully", message: existingMessage });
+      res.status(200).json({ message: "Message created successfully", data: existingMessage });
     }
 
   } catch (error) {
