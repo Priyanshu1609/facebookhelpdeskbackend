@@ -12,7 +12,7 @@ router.get("/", async (_req, res) => {
 });
 
 // POST endpoint to create or update a message
-router.post("/messages", async (req, res) => {
+router.post("/messages/add", async (req, res) => {
   const { messageId, message, updated_time } = req.body;
 
   try {
