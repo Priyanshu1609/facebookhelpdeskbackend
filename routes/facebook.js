@@ -1,7 +1,7 @@
 'use strict';
 
 const router = require("express").Router();
-const authMiddleWare = require("../middlewares/auth");
+// const authMiddleWare = require("../middlewares/auth");
 const Messages = require("../models/Messages");
 
 // Use dotenv to read .env vars into Node
@@ -12,7 +12,7 @@ router.get("/", async (_req, res) => {
 });
 
 // POST route to create or replace a message
-app.post("/messages/add", async (req, res) => {
+router.post("/messages/add", async (req, res) => {
   const { messageId, message } = req.body;
 
   try {
@@ -37,7 +37,7 @@ app.post("/messages/add", async (req, res) => {
 });
 
 // GET route to retrieve a message by messageId
-app.get("/messages/get/:messageId", async (req, res) => {
+router.get("/messages/get/:messageId", async (req, res) => {
   const { messageId } = req.params;
 
   try {
