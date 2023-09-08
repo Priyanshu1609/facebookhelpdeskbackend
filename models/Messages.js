@@ -1,18 +1,14 @@
 const mongoose = require("mongoose");
 
 const MessageSchema = new mongoose.Schema({
-    email: {
+    messageId: {
         type: String,
-        required: true,
-        max: 50,
-        unique: true
+        required: true
     },
     message: {
         type: String,
         required: true
     },
-
-
 }, { timestamps: true });
 
 module.exports = mongoose.model("Message", MessageSchema);
